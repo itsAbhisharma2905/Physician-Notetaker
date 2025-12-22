@@ -1,0 +1,45 @@
+TASK 1 Questions & Answer
+1. How would you handle ambiguous or missing medical data in the transcript?
+
+ANS-In clinical conversations, medical data is often incomplete or implicit. To handle this,
+    I use a confidence-based extraction approach and avoid hard assumptions. If a symptom, diagnosis, or treatment is not clearly mentioned,
+    I mark it as “Not reported” rather than inferring it. I also apply context-aware and temporal analysis to distinguish between past and current symptoms,
+    and flag low-confidence entities for human-in-the-loop validation, which is important for clinical safety.
+
+2. What pre-trained NLP models would you use for medical summarization?
+
+ANS-For medical summarization, I prefer domain-adapted transformer models. Models like ClinicalBERT and BioBERT are trained 
+    on clinical notes and biomedical text, so they capture medical terminology better than generic models. For entity extraction,
+    scispaCy works well for medical NER. In practice, I use a hybrid pipeline combining extractive summarization, transformer-based embeddings,
+    and rule-based validation to ensure accuracy and reduce hallucination.
+
+TASK 2 Questions & Answer
+1. How would you fine-tune BERT for medical sentiment detection?
+
+ANS-To fine-tune BERT for medical sentiment detection, I would start with a domain-adapted model like BioBERT or ClinicalBERT 
+    instead of generic BERT. I’d fine-tune it on labeled patient utterances with sentiment classes such as Anxious, Neutral,
+    and Reassured. During training, I’d use cross-entropy loss, handle class imbalance, and include context from previous dialogue 
+    turns so the model understands sentiment progression in a clinical conversation. I’d evaluate performance using F1-score rather than accuracy,
+    since emotional classes are often unevenly distributed.
+
+2. What datasets would you use for training a healthcare-specific sentiment model?
+
+ANS-I would use a mix of clinical and patient-generated datasets. For clinical language understanding, datasets like MIMIC-III/IV and i2b2/n2c2 
+    are very useful. For emotional expression and concerns, patient health forums (such as MedHelp or HealthBoards) provide realistic sentiment 
+    data. If needed, I’d also generate synthetic doctor–patient conversations to balance classes like reassurance or anxiety. This combination helps the model 
+    capture both medical context and patient emotion accurately.
+
+TASK 3 Questions & Answer
+
+1. How would you train an NLP model to map medical transcripts into SOAP format?
+
+ANS-To train an NLP model for SOAP note generation, I would use doctor–patient transcripts paired with clinician-written SOAP 
+    notes as training data. Each sentence in the transcript would be labeled as Subjective, Objective, Assessment, or Plan.
+    A transformer-based model like ClinicalBERT can then be fine-tuned to classify and group sentences into the correct SOAP sections.
+    After classification, the extracted information is structured and summarized to generate a complete SOAP note.
+
+2. What rule-based or deep-learning techniques would improve the accuracy of SOAP note generation?
+
+ANS-Accuracy can be improved using a hybrid approach. Rule-based logic helps map patient statements to Subjective and physician examination 
+    findings to Objective sections. Deep-learning models handle context and medical terminology, especially for Assessment and Plan. Adding 
+    post-processing rules, temporal ordering, and confidence checks helps prevent hallucinations and keeps the SOAP notes clinically reliable.

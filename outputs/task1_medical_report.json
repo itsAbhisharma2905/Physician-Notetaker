@@ -1,0 +1,19 @@
+{
+  "Patient_Name": "Ms. Jones",
+  "Symptoms": [
+    "the stiffness",
+    "occasional backaches",
+    "any lingering pain",
+    "painkillers",
+    "back pain",
+    "pain",
+    "some discomfort"
+  ],
+  "Diagnosis": "Whiplash injury",
+  "Treatment": [
+    "painkillers",
+    "physiotherapy"
+  ],
+  "Current_Status": "Occasional backache",
+  "Prognosis": "Full recovery expected within six months"
+}

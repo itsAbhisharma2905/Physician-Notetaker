@@ -1,141 +1,95 @@
-Medical NLP Pipeline – Physician–Patient Conversation Analysis
-📌 Overview
+# Physician Notetaker
 
-This project implements an end-to-end NLP pipeline to analyze physician–patient conversations and extract structured medical insights.
-It covers medical entity extraction, patient sentiment and intent analysis, and automated SOAP note generation, following real-world healthcare NLP practices.
+An AI-assisted clinical documentation project exploring speech processing and structured note generation.
 
-The solution uses spaCy for medical text processing and Transformer-based models (DistilBERT) for sentiment analysis.
+## Overview
 
-✅ Tasks Implemented
-Task 1: Medical NLP Extraction
+Physician Notetaker explores how speech-to-text and language processing can assist with organising consultation conversations into structured notes.
 
-NLP-based extraction of:
+The project focuses on reducing manual documentation effort while keeping the clinician responsible for reviewing and approving generated content.
 
-Symptoms
+## Features
 
-Diagnosis
+Document the implemented functionality:
 
-Treatment
+- Audio input or recording
+- Speech-to-text transcription
+- Text preprocessing
+- Structured note generation
+- Summary generation
+- Export of generated notes
+- User review and editing
 
-Prognosis
+## Technology Stack
 
-Structured medical summary generation
+| Component | Technology |
+|---|---|
+| Language | Python |
+| Speech Processing | Actual speech recognition service/library |
+| AI / NLP | Actual configured model |
+| Backend | Actual backend framework |
+| Frontend | Actual interface framework |
+| Storage | Actual configured database |
 
-Keyword extraction of important medical phrases
+## Workflow
 
-Task 2: Sentiment & Intent Analysis
+1. Capture or upload a supported audio recording.
+2. Transcribe speech into text.
+3. Process the transcript.
+4. Generate a structured draft note.
+5. Allow a clinician to review and edit the output.
+6. Export or store the approved note, if supported.
 
-Transformer-based sentiment classification:
+## Installation
 
-Anxious
+```bash
+git clone YOUR_REPOSITORY_URL
+cd YOUR_PROJECT_FOLDER
+```
 
-Neutral
+Create and activate a virtual environment:
 
-Reassured
-
-Patient intent detection:
-
-Reporting symptoms
-
-Seeking reassurance
-
-Expressing concern or gratitude
-
-Task 3: SOAP Note Generation (Bonus)
-
-Automated conversion of transcripts into SOAP notes
-
-Logical mapping of:
-
-Subjective
-
-Objective
-
-Assessment
-
-Plan
-
-Clinically readable, EHR-style output
-
-📁 Project Structure
-medical_nlp_pipeline/
-│
-├── data/
-│   └── conversation.txt          # Input physician–patient transcript
-│
-├── src/
-│            
-│   ├── task1_medical_nlp.py      # Medical entity extraction & keywords
-│   ├── task2_sentiment_intent.py # Sentiment & intent analysis
-│   ├── task3_soap_generator.py   # SOAP note generation
-│
-├── outputs/
-│   ├── task1_medical_report.json
-│   ├── task1_keywords.json
-│   ├── task2_sentiment_intent.json
-│   └── task3_soap_note.json
-│
-|                
-├── requirements.txt
-└── README.md
-
-🛠️ Setup Instructions
-🔹 Prerequisites
-
-Python 3.8 or higher
-
-pip installed
-
-🔹 (Recommended) Create a Virtual Environment
-
-Windows
-
+```bash
 python -m venv venv
+```
+
+Windows:
+
+```bash
 venv\Scripts\activate
+```
 
+Install dependencies:
 
-Mac / Linux
-
-python3 -m venv venv
-source venv/bin/activate
-
-🔹 Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-🔹 Download spaCy Language Model
-python -m spacy download en_core_web_sm
+Add the actual startup command and configuration requirements.
 
+## Privacy and Safety
 
-(This is required for medical NER and keyword extraction.)
+- Use synthetic or properly anonymised recordings for demonstrations.
+- Protect audio files and transcripts.
+- Do not expose patient data in logs or public repositories.
+- Generated notes must be reviewed by a qualified clinician.
+- The project is not a substitute for clinical judgement.
 
-▶️ How to Run the Project
+## Evaluation
 
-From the project root directory:
+Evaluate transcription quality, note completeness, factual consistency, and processing latency using an appropriately consented and anonymised test dataset.
 
-python main.py
+## Future Improvements
 
-📤 Output Files
+- Better medical vocabulary recognition
+- Speaker identification
+- Structured clinical templates
+- Clinician review workflows
+- Privacy and access controls
+- Quality evaluation
 
-After execution, the following files are automatically generated in the outputs/ folder:
-
-File Name	Description
-task1_medical_report.json	Structured medical summary
-task1_keywords.json	Extracted medical keywords
-task2_sentiment_intent.json	Patient sentiment & intent
-task3_soap_note.json	Generated SOAP note
-🧠 Design Highlights
-
-NLP-driven extraction (no hard-coded outputs)
-
-Transformer-based sentiment analysis
-
-Hybrid rule + NLP approach for clinical safety
-
-Modular and readable code structure
-
-Outputs suitable for downstream healthcare systems
-
-👤 Author
+## Author
 
 Abhi Sharma
-Medical NLP Assignment Submission
+
+GitHub: https://github.com/itsAbhisharma2905
